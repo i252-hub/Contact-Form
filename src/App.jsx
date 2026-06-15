@@ -6,8 +6,21 @@ function App() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
-   const [textarea, setTextArea] = useState("");
-   const [query, setQuery] = useState("");
+  const [textarea, setTextArea] = useState("");
+  const [query, setQuery] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(!email.includes("@")){
+      setError("Invalid Email");
+      return;
+    }
+
+    setError("");
+    alert("Form Submitted.")
+  }
 
   return (
     <>
@@ -19,17 +32,18 @@ function App() {
   <div className='name'>
     <div className='fname'>
 <label htmlFor="fname">First Name</label>
-  <input type="text" id="fname" value={fname} onChange={(e)=>setFname(e.target.value)} name="firstname" placeholder=""/>
+  <input type="text" required id="fname" value={fname} onChange={(e)=>setFname(e.target.value)} name="firstname" placeholder=""/>
     </div>
  <div className='lname'>
 <label htmlFor="lname">Last Name</label>
-  <input type="text" id="lname" value={lname} onChange={(e)=>setLname(e.target.value)} name="lastname" placeholder=""/>
+  <input type="text" required id="lname" value={lname} onChange={(e)=>setLname(e.target.value)} name="lastname" placeholder=""/>
  </div>
   
   </div>
   <div className='email'>
  <label htmlFor="email">Email Address</label>
-  <input type="email" id="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder=""/>
+  <input type="email" required id="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder=""/>
+  {error && <p style={{ color: "red" }}>{error}</p>}
   </div>
   
 
@@ -37,7 +51,7 @@ function App() {
  <label htmlFor="query">Query Type</label>
  <div className='query-type'>
   <div className='radio-container'>
-<input type="radio" name="query-type" id="general-enquiry" value="general" checked={query==="general"} onChange={(e) => setQuery(e.target.value)}/>
+<input type="radio" required name="query-type" id="general-enquiry" value="general" checked={query==="general"} onChange={(e) => setQuery(e.target.value)}/>
 <label htmlFor="general-enquiry">General Enquiry</label>
 </div>
 <div className='radio-container'>
