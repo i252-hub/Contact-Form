@@ -1,0 +1,125 @@
+.form{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(206, 234, 221);
+}
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+form{
+  width: 100%;
+  max-width: 800px;
+  background: rgb(255, 255, 255);
+  min-height: 500px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media(max-width:1200px){
+  form{
+      max-width: 400px;
+      min-height: 280px;
+  }
+}
+.name,.email{
+  width: 100%;
+  display: flex;
+  gap:12px;
+}
+
+input, textarea{
+  padding-left: 1px;
+}
+
+.text-input, .buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.email{
+  flex-direction: column;
+}
+.fname,.lname{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+}
+
+input, input:hover, textarea{
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+
+
+ .email input,.fname input, .lname input{
+  width: 100%;
+  height:30px;
+}
+
+
+.radio-container{
+  display: flex;
+  gap: 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.query{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.query-type{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+textarea{
+  resize: none;
+  width: 100%;
+  height: 100px;
+  
+}
+.consent{
+  display: flex;
+  gap: 5px;
+}
+
+.fname, .lname, .query-container, .text-area{
+  display: flex;
+  flex-direction: column;
+  gap:12px;
+}
+button{
+  background: rgb(16, 80, 16);
+  color: white;
+  border: none;
+  padding: 8px 8px 8px 8px;
+  border-radius: 5px;
+}
+
+@media(max-width:575px){
+  .name,.lname,.query-type{
+    flex-direction: column;
+  }
+  .fname,.lname{
+    width: 100%;
+  }
+}
+
